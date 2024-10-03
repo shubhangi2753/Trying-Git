@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .form-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                width: 400px;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+            label {
+                font-size: 1rem;
+                margin-bottom: 10px;
+                display: block;
+            }
+            input, select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>Registration Form</h1>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required/>
+    
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select your department</option>
+                    <option value="AIML">Artificial Intelligence and Machine Learning</option>
+                    <option value="AIDS">Artificial Intelligence and Data Science</option>
+                </select>
+    
+                <label for="usn">USN:</label>
+                <input type="text" id="usn" name="usn" placeholder="Enter your USN" required/>
+    
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var usn = document.getElementById("usn").value;
+    
+                if (name === "" || usn === "") {
+                    alert("All fields must be filled out.");
+                    return false;
+                }
+                // You can add further validation here (e.g., regex for USN format).
+                return true;
+            }
+        </script>
+    </body>
+</html>
